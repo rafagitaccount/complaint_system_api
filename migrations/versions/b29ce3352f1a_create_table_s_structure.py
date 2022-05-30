@@ -1,8 +1,8 @@
-"""initial
+"""create table's structure
 
-Revision ID: f2cdc3942f89
+Revision ID: b29ce3352f1a
 Revises: 
-Create Date: 2022-04-10 11:41:38.459577
+Create Date: 2022-05-15 15:49:00.518919
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f2cdc3942f89'
+revision = 'b29ce3352f1a'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -24,6 +24,7 @@ def upgrade():
     sa.Column('password', sa.String(length=255), nullable=True),
     sa.Column('first_name', sa.String(length=200), nullable=True),
     sa.Column('last_name', sa.String(length=200), nullable=True),
+    sa.Column('phone', sa.String(length=20), nullable=True),
     sa.Column('role', sa.Enum('approver', 'complainer', 'admin', name='roletype'), server_default='complainer', nullable=False),
     sa.Column('iban', sa.String(length=200), nullable=True),
     sa.PrimaryKeyConstraint('id'),
