@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from db import database
 from resources.routes import api_router
-
 
 # CORS implementation
 origins = [
